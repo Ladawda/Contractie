@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Lock, ArrowLeft, MapPin } from "lucide-react";
-import { usePostHog } from "posthog-js/react";
+import { usePostHog, useFeatureFlagEnabled } from "posthog-js/react";
 import { joinWaitlist } from "@/app/actions/waitlist";
 
 function AmbientOrbs() {
@@ -60,6 +60,48 @@ export function Hero() {
   const [errorMsg, setErrorMsg] = useState("");
   const zipRef = useRef<HTMLInputElement>(null);
   const posthog = usePostHog();
+  const isClarityVariant = useFeatureFlagEnabled("landing-hero-variant");
+  const variant = isClarityVariant ? "clarity" : "control";
+
+  const copy = isClarityVariant
+    ? {
+        badge: "NOW RECRUITING MEMBERS",
+        headline: "Post Jobs. Find Contractors.",
+        headlineAccent: "Skip the Middleman.",
+        subtitle: "Guild connects contractors directly with clients — no lead fees, no commissions, no platform taking a cut.",
+        promo1: (
+          <>
+            First month <strong className="text-guild-coral font-semibold">FREE</strong> for clients posting jobs
+          </>
+        ),
+        promo2: (
+          <>
+            First 100 contractors: <strong className="text-guild-coral font-semibold">$25/mo forever</strong>
+          </>
+        ),
+      }
+    : {
+        badge: "GRAND OPENING SOON",
+        headline: "Join the",
+        headlineAccent: "Guild",
+        subtitle: (
+          <>
+            Post a quest. Find your party. Get it done.
+            <br />
+            No lead fees. No commissions. No BS.
+          </>
+        ),
+        promo1: (
+          <>
+            First month <strong className="text-guild-coral font-semibold">FREE</strong> for quest posters
+          </>
+        ),
+        promo2: (
+          <>
+            First 100 adventurers: <strong className="text-guild-coral font-semibold">$25/mo forever</strong>
+          </>
+        ),
+      };
 
   const handleStep1 = (e: React.FormEvent) => {
     e.preventDefault();
@@ -67,6 +109,7 @@ export function Hero() {
     posthog?.capture("waitlist_step1_completed", {
       role,
       referral_source: "hero",
+      variant,
     });
     setStep(2);
     // Focus the ZIP input after transition
@@ -85,6 +128,7 @@ export function Hero() {
         role,
         zip_code: zipCode,
         referral_source: "hero",
+        variant,
       });
       posthog?.identify(email, { role, zip_code: zipCode });
       setStatus("success");
@@ -98,6 +142,7 @@ export function Hero() {
       posthog?.capture("waitlist_signup_error", {
         error: result.error,
         referral_source: "hero",
+        variant,
       });
       setErrorMsg(result.error);
       setStatus("error");
@@ -123,7 +168,7 @@ export function Hero() {
             <span className="relative w-1.5 h-1.5 bg-guild-coral rounded-full">
               <span className="absolute -inset-1 bg-guild-coral rounded-full animate-pulse-ring" />
             </span>
-            GRAND OPENING SOON
+            {copy.badge}
           </motion.div>
 
           {/* Headline */}
@@ -133,7 +178,8 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             className="font-display font-black text-[clamp(2.75rem,6vw,4.5rem)] leading-[1.08] tracking-wide text-gray-900 mb-5"
           >
-            <span className="text-gradient-brand">Join the Guild</span>
+            {copy.headline}{" "}
+            <span className="text-gradient-brand">{copy.headlineAccent}</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -143,9 +189,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="text-[clamp(1.0625rem,2vw,1.25rem)] text-gray-500 max-w-[560px] mx-auto mb-7 leading-relaxed"
           >
-            Post a quest. Find your party. Get it done.
-            <br />
-            No lead fees. No commissions. No BS.
+            {copy.subtitle}
           </motion.p>
 
           {/* Promo */}
@@ -155,12 +199,8 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="inline-flex flex-wrap justify-center gap-x-4 gap-y-1.5 px-6 py-3.5 glass rounded-2xl mb-10"
           >
-            <span className="text-sm text-gray-600">
-              First month <strong className="text-guild-coral font-semibold">FREE</strong> for quest posters
-            </span>
-            <span className="text-sm text-gray-600">
-              First 100 adventurers: <strong className="text-guild-coral font-semibold">$25/mo forever</strong>
-            </span>
+            <span className="text-sm text-gray-600">{copy.promo1}</span>
+            <span className="text-sm text-gray-600">{copy.promo2}</span>
           </motion.div>
 
           {/* Two-step form */}
