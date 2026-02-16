@@ -6,6 +6,15 @@ Complete journey for contractors from discovery to getting hired and completing 
 
 ---
 
+## Pricing
+
+| Tier | Price | Features |
+|------|-------|----------|
+| **Founding Member** | **$25/month** | Unlimited applications, lifetime rate (first 100 only) |
+| **Regular** | **$49/month** | Unlimited applications |
+
+---
+
 ## Phase 1: Discovery
 
 ### Entry Points
@@ -19,10 +28,13 @@ Complete journey for contractors from discovery to getting hired and completing 
 **URL**: `/contractors`
 
 **Hero Section:**
-- Headline: "Find Quality Jobs in Your Area"
-- Subheadline: "Connect with homeowners who need your skills. No bidding wars, no middleman fees."
+- Headline: "Find Work. Keep 100%."
+- Subheadline: "Stop paying $50-100 for leads that ghost you. One flat fee, unlimited opportunities."
 - CTA: "Create Free Profile"
-- Trust badges: "Free to Join", "Keep 100% of Earnings", "Verified Leads"
+- Trust badges: "No Lead Fees", "No Commission", "Direct Connection"
+
+**Launch Promo Banner:**
+🎉 **GRAND OPENING** — First 100 contractors get $25/month forever (50% off!)
 
 **Social Proof:**
 - "Join 500+ contractors already finding work"
@@ -31,11 +43,11 @@ Complete journey for contractors from discovery to getting hired and completing 
 **How It Works (3 steps):**
 1. Create your profile (5 min)
 2. Browse jobs in your area
-3. Get contacted by homeowners
+3. Get contacted by clients
 
 **FAQ Preview:**
-- Is it really free? → Yes, contractors pay nothing
-- How do I get paid? → Directly by homeowner
+- Is it really $25/month? → Yes, for founding members
+- How do I get paid? → Directly by client, we take 0%
 - What trades are accepted? → All licensed trades
 
 **CTA**: "Get Started" button → Signup modal
@@ -73,12 +85,6 @@ Complete journey for contractors from discovery to getting hired and completing 
 - Phone Number (with country code)
 - Preferred contact method (radio: Phone/Text/Email)
 
-**Validation:**
-- Phone: Valid format
-- Name: Required
-
-**CTA**: "Continue"
-
 #### Step 2.2: Trade Selection
 **Screen**: Trade selector
 
@@ -95,10 +101,6 @@ Complete journey for contractors from discovery to getting hired and completing 
 - General Contracting
 - Other (text input)
 
-**Display**: Icon + label for each trade
-
-**CTA**: "Continue"
-
 #### Step 2.3: License Information
 **Screen**: License verification
 
@@ -109,16 +111,13 @@ Complete journey for contractors from discovery to getting hired and completing 
 - Upload License Photo (file picker)
 
 **Help Text**: 
-- "Why we need this: Homeowners trust verified contractors. We manually verify every license."
+- "Why we need this: Clients trust verified contractors. We manually verify every license."
 - "Don't have a license yet? [Learn about licensing requirements]"
 
 **File Upload:**
 - Drag & drop or click to browse
 - Accepted: JPG, PNG, PDF
 - Max size: 5MB
-- Preview thumbnail after upload
-
-**CTA**: "Continue"
 
 #### Step 2.4: Service Area
 **Screen**: Location setup
@@ -129,39 +128,16 @@ Complete journey for contractors from discovery to getting hired and completing 
   - Address input
   - Radius slider: 5, 10, 25, 50 miles
 
-**Visual**: Map preview showing coverage area (if using radius)
-
-**Help Text**: "You'll see jobs within this area. You can change this later."
-
-**CTA**: "Continue"
-
 #### Step 2.5: Portfolio Photos
 **Screen**: Photo upload
 
-**Instructions**: "Show homeowners your best work. Upload 3-10 photos of completed projects."
-
-**Upload Interface:**
-- Grid of upload slots
-- Drag & drop multiple files
-- Each photo:
-  - Image preview
-  - Caption input (optional)
-  - Delete button
-  - Reorder handle (drag to reorder)
+**Instructions**: "Show clients your best work. Upload 3-10 photos of completed projects."
 
 **Requirements:**
 - Minimum 3 photos
 - Maximum 10 photos
 - Format: JPG, PNG
 - Max per file: 5MB
-
-**Progress**: "3 of 10 photos uploaded"
-
-**Tips Sidebar:**
-- "Good photos show: Before/after, details, completed spaces"
-- "Avoid: Blurry photos, stock images, unrelated work"
-
-**CTA**: "Continue" (disabled until 3+ photos)
 
 #### Step 2.6: Bio & Description
 **Screen**: About you
@@ -170,13 +146,6 @@ Complete journey for contractors from discovery to getting hired and completing 
 - Headline (60 chars max): "e.g., Expert Plumber with 15 Years Experience"
 - Bio (500 chars max): Textarea with character counter
 - Years of Experience (number input)
-
-**Help Text**: "This appears on your public profile. Be specific about your specialties."
-
-**Example Bio**: 
-> "Licensed master plumber specializing in bathroom renovations, emergency repairs, and new construction. Serving the greater Austin area for over 15 years. Fast, reliable service with upfront pricing."
-
-**CTA**: "Continue"
 
 #### Step 2.7: Review & Submit
 **Screen**: Profile preview
@@ -233,20 +202,45 @@ Complete journey for contractors from discovery to getting hired and completing 
 - CTA: "Browse Jobs Now"
 - Quick tips for success
 
+### Subscription Step
+**Screen**: Choose your plan
+
+**Options:**
+```
++------------------------+
+| FOUNDING MEMBER        |
+| $25/month              |
+| Unlimited applications |
+| Lifetime rate          |
+| [Subscribe]            |
+| (First 100 only!)      |
++------------------------+
+| REGULAR                |
+| $49/month              |
+| Unlimited applications |
+| [Subscribe]            |
++------------------------+
+```
+
+**Payment:**
+- Stripe checkout
+- Monthly billing
+- Cancel anytime
+
 ### First Login (Post-Approval)
 **Screen**: Welcome back
 
 **Onboarding Checklist:**
 - [x] Create profile
 - [x] Verify license
+- [ ] Subscribe
 - [ ] Complete first job
-- [ ] Get first review
 
 **Quick Tour Modal:**
 1. "This is your dashboard" - shows job feed
 2. "Filter by your trades" - shows filter bar
 3. "Express interest in jobs" - shows button
-4. "Homeowner contacts you directly" - explains process
+4. "Client contacts you directly" - explains process
 
 **CTA**: "Start Browsing Jobs"
 
@@ -280,10 +274,6 @@ Complete journey for contractors from discovery to getting hired and completing 
 - Budget (min/max sliders)
 - Posted (last 24h, 7 days, 30 days)
 
-**Empty State:**
-- "No jobs match your filters"
-- Suggestion: "Try expanding your service area or trades"
-
 ### Job Detail View
 **URL**: `/jobs/[id]`
 
@@ -293,7 +283,7 @@ Complete journey for contractors from discovery to getting hired and completing 
 - Full description
 - Location (ZIP, approximate area)
 - Budget range (if provided)
-- Photos (if homeowner uploaded)
+- Photos (if client uploaded)
 - Posted date
 - "Express Interest" button
 
@@ -303,19 +293,19 @@ Complete journey for contractors from discovery to getting hired and completing 
 - "Send Interest" button
 
 **After Expressing Interest:**
-- Success toast: "Interest sent! Homeowner will review your profile."
+- Success toast: "Interest sent! Client will review your profile."
 - Job marked as "Interest Expressed" in feed
-- Email notification to homeowner
+- Email notification to client
 
 ---
 
 ## Phase 6: Getting Selected
 
-### Notification: Homeowner Selected You
-**Email Subject**: "[Homeowner Name] wants to connect about [Job Title]"
+### Notification: Client Selected You
+**Email Subject**: "[Client Name] wants to connect about [Job Title]"
 
 **Email Content:**
-- Homeowner name and contact info
+- Client name and contact info
 - Job details
 - Your next step: "Contact them within 24 hours"
 - Tips for first contact
@@ -328,17 +318,17 @@ Complete journey for contractors from discovery to getting hired and completing 
 **URL**: `/contractor/applications`
 
 **Tabs:**
-- Active (homeowner hasn't decided)
+- Active (client hasn't decided)
 - Selected (you're chosen, awaiting contact)
 - Completed (job done)
-- Declined (homeowner chose someone else)
+- Declined (client chose someone else)
 
 **Selected Job Card:**
 ```
 +------------------------+
 | 🎉 SELECTED            |
 | Job Title              |
-| Homeowner: [Name]      |
+| Client: [Name]         |
 | Phone: [Number]        |
 | Email: [Email]         |
 | [Mark as Contacted]    |
@@ -366,136 +356,16 @@ Complete journey for contractors from discovery to getting hired and completing 
 1. Contractor marks "Complete"
 2. Uploads completion photos (optional, 0-5)
 3. Adds final notes
-4. Requests homeowner mark as complete
-
-### Follow-up
-
-**If homeowner doesn't respond (7 days):**
-- Reminder email to homeowner
-- Contractor can "nudge" (one time)
-
-**If homeowner marks complete:**
-- Contractor receives notification
-- Asked to leave testimonial about homeowner
-- Job moves to "Completed"
+4. Requests client mark as complete
 
 ---
 
-## Phase 8: Building Reputation
+## Summary
 
-### Profile Stats
-**Public Profile Shows:**
-- Member since [Date]
-- Jobs completed: X
-- Response rate: X%
-- Average response time: X hours
-- Portfolio photos
-- Past job history (with photos)
+The **Contractor** flow supports:
+- ✅ All licensed trades
+- ✅ Multiple service areas
+- ✅ Portfolio showcasing
+- ✅ Direct client connection
 
-### Completed Jobs Section
-- List of past jobs
-- Completion photos
-- Homeowner testimonials (if provided)
-
-### Trust Badges
-- ✅ License Verified
-- ⭐ Top Contractor (if high completion rate)
-- 🏆 10+ Jobs Completed
-- ⚡ Fast Responder (avg < 2 hours)
-
----
-
-## Edge Cases & Error States
-
-### License Rejection
-**Trigger**: License invalid or expired
-
-**Email**: "Action needed: License verification failed"
-
-**Dashboard:**
-- Red banner: "License couldn't be verified"
-- Reason: "License not found in [State] database" or "License expired"
-- CTA: "Update License Information"
-
-**Options:**
-- Upload different license
-- Contact support
-- Appeal decision
-
-### No Jobs in Area
-**Screen**: Empty state
-
-**Message**: "No jobs in your service area yet"
-
-**Suggestions:**
-- Expand service radius
-- Check back tomorrow
-- Share Contractie with homeowners you know
-
-### Account Suspension
-**Triggers:**
-- Multiple homeowner complaints
-- Fake license
-- Inappropriate behavior
-
-**Process:**
-- Email notification with reason
-- Appeal form
-- 7-day review process
-
-### Inactive Account
-**Trigger**: No login for 90 days
-
-**Email**: "We miss you! New jobs are waiting"
-
-**Reactivation**: Simple login, no additional steps
-
----
-
-## Mobile Considerations
-
-### Mobile-Specific Adaptations
-
-**Onboarding:**
-- Single column layout
-- Larger touch targets (48px min)
-- Camera access for license/photo upload
-- Simplified forms (fewer fields per screen)
-
-**Job Browsing:**
-- Swipeable job cards (Tinder-style)
-- Bottom sheet for filters
-- Tap to call from job detail
-
-**Photo Upload:**
-- Direct camera access
-- Quick crop/rotate
-- Multiple select from gallery
-
----
-
-## Notifications Summary
-
-| Trigger | Channel | Content |
-|---------|---------|---------|
-| Profile submitted | Email | Confirmation, timeline |
-| Profile approved | Email + Push | You're approved, browse jobs |
-| Profile rejected | Email | Reason, next steps |
-| New job in area | Email (daily digest) | Job summary, CTA to view |
-| Homeowner selected you | Email + Push | Contact info, next steps |
-| Homeowner marked complete | Email + Push | Please leave testimonial |
-| Account inactive (30d) | Email | We miss you |
-| Account inactive (90d) | Email | Account will be paused |
-
----
-
-## Analytics to Track
-
-| Metric | Target |
-|--------|--------|
-| Signup completion rate | >60% |
-| Profile approval rate | >80% |
-| Time to first job application | <7 days |
-| Express interest → selected rate | >20% |
-| Selected → hired rate | >50% |
-| 30-day retention | >40% |
+**Key Differentiator:** $25-49/month unlimited vs $25-120/lead on competitor platforms. Keep 100% of earnings.

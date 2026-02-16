@@ -16,26 +16,35 @@ We're stripping out all complex features and replacing them with manual processe
 
 ## What's In The MVP
 
-### Free Tier (Homeowners)
-- 1 job post per month
-- Connect with up to 3 contractors
-- Basic job listing
+### Client Pricing
 
-### Paid Tier - $25/month (Homeowners)
-- Unlimited job posts
-- Unlimited contractor contacts
-- Priority listing (appears first in contractor feeds)
+| Tier | Price | Features |
+|------|-------|----------|
+| **Launch Promo** | **FREE** | First month free for all job posts |
+| **Regular** | **$10 per job post** | One-time fee, no recurring charges |
 
-### Free Tier (Contractors)
-- Create verified profile
+### Contractor Pricing
+
+| Tier | Price | Features |
+|------|-------|----------|
+| **Founding Member** | **$25/month** | Unlimited applications, lifetime rate (first 100 only) |
+| **Regular** | **$49/month** | Unlimited applications |
+
+---
+
+## Features
+
+### For Clients (Homeowners/Businesses)
+- Post jobs for **FREE** (launch month), then $10/post
+- Browse verified contractor profiles
+- Receive contractor applications
+- Direct email connection
+
+### For Contractors
+- Create verified profile (manual verification)
 - Browse jobs in their area
-- Express interest on up to 5 jobs/month
-- Manual license verification (you verify)
-
-### Paid Tier - $25/month (Contractors)
-- Unlimited job interest expressions
-- Priority placement in search results
-- "Verified Pro" badge
+- Express interest on unlimited jobs (with subscription)
+- Direct email connection with clients
 
 ---
 
@@ -82,7 +91,7 @@ We're stripping out all complex features and replacing them with manual processe
 **Total pages needed:** 6
 1. Landing page
 2. Contractor signup
-3. Homeowner signup
+3. Client signup
 4. Job posting form
 5. Job browse page
 6. Simple admin dashboard (just for you)
@@ -95,7 +104,7 @@ We're stripping out all complex features and replacing them with manual processe
 |-----|------|
 | Day 1 | Setup project, database schema, auth |
 | Day 2 | Landing page + contractor signup |
-| Day 3 | Homeowner signup + job posting |
+| Day 3 | Client signup + job posting |
 | Day 4 | Job browse + "Express Interest" button |
 | Day 5 | Stripe subscriptions + admin dashboard |
 | Day 6 | Email templates + testing |
@@ -106,7 +115,7 @@ We're stripping out all complex features and replacing them with manual processe
 ## Success Metrics (First 30 Days)
 
 - **10 contractors** signed up and verified
-- **10 job posts** from homeowners
+- **10 job posts** from clients
 - **5 successful matches** (intro emails sent)
 - **2 paid subscriptions** (either side)
 
