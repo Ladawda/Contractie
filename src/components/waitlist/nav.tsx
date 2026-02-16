@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { GuildLogo } from "@/components/guild-logo";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,13 +22,8 @@ export function Nav() {
       }`}
     >
       <div className="max-w-[1200px] mx-auto px-5 md:px-8 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2.5">
-          <div className="w-10 h-10 bg-gradient-to-br from-guild-blue to-guild-teal rounded-[10px] flex items-center justify-center font-display font-black text-xl text-white relative shadow-[0_2px_8px_rgba(37,99,235,0.25)]">
-            G
-          </div>
-          <span className="font-display font-bold text-[1.375rem] text-gray-900 tracking-[0.08em]">
-            GUILD
-          </span>
+        <a href="#" className="flex items-center">
+          <GuildLogo height={36} />
         </a>
         <a
           href="#final-cta"

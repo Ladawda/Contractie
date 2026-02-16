@@ -103,16 +103,7 @@ function buildWelcomeHtml(config: RoleConfig, unsubscribeUrl: string): string {
           <!-- Header -->
           <tr>
             <td style="background:linear-gradient(135deg,#2563EB,#0D9488);padding:32px 40px;text-align:center;">
-              <table cellpadding="0" cellspacing="0" style="margin:0 auto;">
-                <tr>
-                  <td style="background-color:rgba(255,255,255,0.2);border-radius:10px;padding:6px 12px;">
-                    <span style="color:#ffffff;font-size:18px;font-weight:800;letter-spacing:0.5px;">G</span>
-                  </td>
-                  <td style="padding-left:10px;">
-                    <span style="color:#ffffff;font-size:20px;font-weight:700;letter-spacing:0.5px;">GUILD</span>
-                  </td>
-                </tr>
-              </table>
+              <img src="https://tdhxydzsguacwuwtledk.supabase.co/storage/v1/object/public/Logo/logo.svg" alt="Guild" height="36" style="height:36px;width:auto;" />
             </td>
           </tr>
 

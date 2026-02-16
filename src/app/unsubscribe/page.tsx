@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
+import { GuildLogo } from "@/components/guild-logo";
 
 function UnsubscribeContent() {
   const searchParams = useSearchParams();
@@ -36,15 +37,8 @@ function UnsubscribeContent() {
     <div className="min-h-screen bg-snow flex items-center justify-center px-4">
       <div className="w-full max-w-sm text-center">
         {/* Logo */}
-        <div className="inline-flex items-center gap-2 mb-8">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-guild-blue to-guild-teal flex items-center justify-center">
-            <span className="text-white font-display text-sm font-bold">
-              G
-            </span>
-          </div>
-          <span className="font-display text-xl font-bold text-gray-900">
-            Guild
-          </span>
+        <div className="mb-8">
+          <GuildLogo height={36} />
         </div>
 
         <div className="glass-strong rounded-2xl p-8">

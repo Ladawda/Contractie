@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import { GuildLogo } from "@/components/guild-logo";
 
 export function AdminShell({ children }: { children: React.ReactNode }) {
   const router = useRouter();
@@ -18,12 +19,9 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
       {/* Header */}
       <header className="glass-strong border-b border-silver/50 sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-guild-blue to-guild-teal flex items-center justify-center">
-              <span className="text-white font-display text-xs font-bold">G</span>
-            </div>
-            <span className="font-display text-lg font-bold text-gray-900">Guild</span>
-            <span className="text-gray-400 text-sm ml-1">Admin</span>
+          <div className="flex items-center gap-3">
+            <GuildLogo height={28} />
+            <span className="text-gray-400 text-sm">Admin</span>
           </div>
 
           <button

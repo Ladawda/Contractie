@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import { GuildLogo } from "@/components/guild-logo";
 
 export default function AdminLoginPage() {
   const [email, setEmail] = useState("");
@@ -37,11 +38,8 @@ export default function AdminLoginPage() {
       <div className="w-full max-w-sm">
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 mb-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-guild-blue to-guild-teal flex items-center justify-center">
-              <span className="text-white font-display text-sm font-bold">G</span>
-            </div>
-            <span className="font-display text-xl font-bold text-gray-900">Guild</span>
+          <div className="flex justify-center mb-2">
+            <GuildLogo height={36} />
           </div>
           <p className="text-gray-500 text-sm">Admin Portal</p>
         </div>
