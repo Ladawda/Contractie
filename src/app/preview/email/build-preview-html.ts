@@ -107,9 +107,12 @@ export function buildPreviewHtml(role: string): string {
           <tr>
             <td style="padding:0 40px 32px;text-align:center;">
               <div style="border-top:1px solid #e5e7eb;padding-top:24px;">
-                <p style="margin:0;font-size:12px;color:#9ca3af;line-height:1.5;">
+                <p style="margin:0 0 8px;font-size:12px;color:#9ca3af;line-height:1.5;">
                   You're receiving this because you signed up at <a href="https://joinguild.app" style="color:#2563EB;text-decoration:none;">joinguild.app</a>.<br />
                   No lead fees. No commissions. No BS.
+                </p>
+                <p style="margin:0;font-size:11px;">
+                  <a href="#" style="color:#9ca3af;text-decoration:underline;">Unsubscribe</a>
                 </p>
               </div>
             </td>

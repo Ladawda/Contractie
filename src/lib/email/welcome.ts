@@ -2,6 +2,8 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://joinguild.app";
+
 type RoleConfig = {
   roleName: string;
   roleEmoji: string;
@@ -45,16 +47,25 @@ function getRoleConfig(role: string): RoleConfig {
   }
 }
 
-export async function sendWelcomeEmail(email: string, role: string) {
+export async function sendWelcomeEmail(
+  email: string,
+  role: string,
+  unsubscribeToken: string
+) {
   const config = getRoleConfig(role);
+  const unsubscribeUrl = `${BASE_URL}/unsubscribe?token=${unsubscribeToken}`;
 
   try {
     const { data, error } = await resend.emails.send({
       from: "Guild <noreply@joinguild.app>",
       to: [email],
       subject: `${config.roleEmoji} Welcome to the Guild, ${config.roleName}!`,
-      html: buildWelcomeHtml(config),
-      text: buildWelcomeText(config),
+      html: buildWelcomeHtml(config, unsubscribeUrl),
+      text: buildWelcomeText(config, unsubscribeUrl),
+      headers: {
+        "List-Unsubscribe": `<${unsubscribeUrl}>`,
+        "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+      },
       tags: [
         { name: "type", value: "welcome" },
         { name: "role", value: role },
@@ -73,7 +84,7 @@ export async function sendWelcomeEmail(email: string, role: string) {
   }
 }
 
-function buildWelcomeHtml(config: RoleConfig): string {
+function buildWelcomeHtml(config: RoleConfig, unsubscribeUrl: string): string {
   const { roleName, roleEmoji, heroColor, ctaHtml } = config;
 
   return `
@@ -146,9 +157,12 @@ function buildWelcomeHtml(config: RoleConfig): string {
           <tr>
             <td style="padding:0 40px 32px;text-align:center;">
               <div style="border-top:1px solid #e5e7eb;padding-top:24px;">
-                <p style="margin:0;font-size:12px;color:#9ca3af;line-height:1.5;">
+                <p style="margin:0 0 8px;font-size:12px;color:#9ca3af;line-height:1.5;">
                   You're receiving this because you signed up at <a href="https://joinguild.app" style="color:#2563EB;text-decoration:none;">joinguild.app</a>.<br />
                   No lead fees. No commissions. No BS.
+                </p>
+                <p style="margin:0;font-size:11px;">
+                  <a href="${unsubscribeUrl}" style="color:#9ca3af;text-decoration:underline;">Unsubscribe</a>
                 </p>
               </div>
             </td>
@@ -162,7 +176,7 @@ function buildWelcomeHtml(config: RoleConfig): string {
 </html>`.trim();
 }
 
-function buildWelcomeText(config: RoleConfig): string {
+function buildWelcomeText(config: RoleConfig, unsubscribeUrl: string): string {
   const { roleName, ctaText } = config;
 
   return `
@@ -181,5 +195,7 @@ No lead fees. No commissions. No BS.
 
 — The Guild Team
 https://joinguild.app
+
+Unsubscribe: ${unsubscribeUrl}
 `.trim();
 }

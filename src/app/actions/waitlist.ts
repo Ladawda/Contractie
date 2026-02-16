@@ -28,12 +28,16 @@ export async function joinWaitlist(formData: {
       ? "both"
       : "adventurer";
 
-  const { error } = await supabase.from("waitlist_signups").insert({
-    email: email.toLowerCase().trim(),
-    role: mappedRole,
-    zip_code: zipCode?.trim() || null,
-    referral_source: referralSource || null,
-  });
+  const { data, error } = await supabase
+    .from("waitlist_signups")
+    .insert({
+      email: email.toLowerCase().trim(),
+      role: mappedRole,
+      zip_code: zipCode?.trim() || null,
+      referral_source: referralSource || null,
+    })
+    .select("unsubscribe_token")
+    .single();
 
   if (error) {
     if (error.code === "23505") {
@@ -45,9 +49,11 @@ export async function joinWaitlist(formData: {
   }
 
   // Send welcome email (fire-and-forget — don't block signup on email delivery)
-  sendWelcomeEmail(email.toLowerCase().trim(), mappedRole).catch((err) =>
-    console.error("Welcome email failed:", err)
-  );
+  sendWelcomeEmail(
+    email.toLowerCase().trim(),
+    mappedRole,
+    data.unsubscribe_token
+  ).catch((err) => console.error("Welcome email failed:", err));
 
   return { success: true };
 }
