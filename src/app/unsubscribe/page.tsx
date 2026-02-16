@@ -38,7 +38,7 @@ function UnsubscribeContent() {
       <div className="w-full max-w-sm text-center">
         {/* Logo */}
         <div className="mb-8">
-          <GuildLogo height={36} />
+          <GuildLogo height={28} />
         </div>
 
         <div className="glass-strong rounded-2xl p-8">

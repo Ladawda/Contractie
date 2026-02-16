@@ -20,7 +20,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
       <header className="glass-strong border-b border-silver/50 sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <GuildLogo height={28} />
+            <GuildLogo height={22} />
             <span className="text-gray-400 text-sm">Admin</span>
           </div>
 

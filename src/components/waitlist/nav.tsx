@@ -23,7 +23,7 @@ export function Nav() {
     >
       <div className="max-w-[1200px] mx-auto px-5 md:px-8 flex items-center justify-between">
         <a href="#" className="flex items-center">
-          <GuildLogo height={36} />
+          <GuildLogo height={24} />
         </a>
         <a
           href="#final-cta"

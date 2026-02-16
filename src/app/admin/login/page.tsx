@@ -39,7 +39,7 @@ export default function AdminLoginPage() {
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="flex justify-center mb-2">
-            <GuildLogo height={36} />
+            <GuildLogo height={28} />
           </div>
           <p className="text-gray-500 text-sm">Admin Portal</p>
         </div>
