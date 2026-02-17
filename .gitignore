@@ -39,6 +39,9 @@ yarn-error.log*
 # mcp config (contains API keys)
 .mcp.json
 
+# remotion render output
+out/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
