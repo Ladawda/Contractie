@@ -3,17 +3,24 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Guild",
-  description: "Guild privacy policy — how we collect, use, and protect your data.",
+  description:
+    "Learn how Guild collects, uses, and protects your personal information. Read our full privacy policy.",
   alternates: { canonical: "/privacy" },
+  openGraph: {
+    title: "Privacy Policy | Guild",
+    description:
+      "Learn how Guild collects, uses, and protects your personal information.",
+    url: "https://joinguild.app/privacy",
+  },
 };
 
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-snow py-20 px-5 md:px-8">
-      <article className="max-w-[720px] mx-auto prose prose-gray">
+      <article className="max-w-[720px] mx-auto">
         <Link
           href="/"
-          className="inline-flex items-center gap-1 text-sm text-guild-blue hover:underline mb-8 no-underline"
+          className="inline-flex items-center gap-1 text-sm text-guild-blue hover:underline mb-8"
         >
           &larr; Back to home
         </Link>
@@ -21,81 +28,127 @@ export default function PrivacyPage() {
         <h1 className="font-display text-3xl font-bold text-gray-900 mb-2">
           Privacy Policy
         </h1>
-        <p className="text-sm text-gray-400 mb-10">
-          Last updated: {new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+        <p className="text-sm text-gray-500 mb-10">
+          Effective date: February 18, 2026
         </p>
 
-        <section>
-          <h2 className="text-xl font-bold text-gray-900 mt-8 mb-3">1. Information We Collect</h2>
+        <section className="mb-8">
+          <h2 className="text-xl font-bold text-gray-900 mb-3">1. Introduction</h2>
           <p className="text-gray-600 leading-relaxed mb-4">
-            When you join our waitlist or use Guild, we may collect the following information:
+            Guild (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) operates the website
+            joinguild.app. This Privacy Policy explains how we collect, use, disclose, and
+            safeguard your information when you visit our website or join our waitlist. Please read
+            this policy carefully. If you do not agree with the terms of this policy, please do not
+            access the site.
+          </p>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-xl font-bold text-gray-900 mb-3">2. Information We Collect</h2>
+          <p className="text-gray-600 leading-relaxed mb-4">
+            We collect information that you voluntarily provide to us when you register on the
+            waitlist, express interest in obtaining information about us or our products, or
+            otherwise contact us. The personal information we collect may include:
           </p>
           <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
             <li>Email address</li>
-            <li>ZIP code (to match you with local professionals)</li>
-            <li>Role selection (client, contractor, or both)</li>
-            <li>Usage data and analytics (via PostHog and Google Analytics)</li>
+            <li>ZIP code, used to match you with local service professionals</li>
+            <li>Role preference (client seeking services, contractor offering services, or both)</li>
+            <li>Device and browser information collected automatically through cookies</li>
+            <li>Usage patterns and interaction behavior via product and website tools</li>
           </ul>
         </section>
 
-        <section>
-          <h2 className="text-xl font-bold text-gray-900 mt-8 mb-3">2. How We Use Your Information</h2>
-          <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-            <li>To communicate with you about Guild updates and launch status</li>
-            <li>To match you with relevant contractors or clients in your area</li>
-            <li>To improve our platform and user experience</li>
-            <li>To send you marketing communications (you can unsubscribe anytime)</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-bold text-gray-900 mt-8 mb-3">3. Data Sharing</h2>
+        <section className="mb-8">
+          <h2 className="text-xl font-bold text-gray-900 mb-3">3. How We Use Your Information</h2>
           <p className="text-gray-600 leading-relaxed mb-4">
-            We do not sell your personal information. We may share data with trusted third-party services
-            that help us operate Guild, including:
+            We use the information we collect for the following business purposes:
           </p>
           <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-            <li>Supabase (database and authentication)</li>
-            <li>Resend (email delivery)</li>
-            <li>PostHog (product analytics)</li>
-            <li>Google Analytics (website analytics)</li>
-            <li>Vercel (hosting)</li>
+            <li>To send you updates about Guild, including launch announcements and new features</li>
+            <li>To match you with relevant contractors or clients in your geographic area</li>
+            <li>To personalize your experience and deliver content tailored to your interests</li>
+            <li>To improve our website, products, and services based on usage patterns</li>
+            <li>To send marketing communications, which you can unsubscribe from at any time</li>
+            <li>To detect, prevent, and address technical issues or fraudulent activity</li>
           </ul>
         </section>
 
-        <section>
-          <h2 className="text-xl font-bold text-gray-900 mt-8 mb-3">4. Cookies and Tracking</h2>
+        <section className="mb-8">
+          <h2 className="text-xl font-bold text-gray-900 mb-3">4. Third-Party Services</h2>
           <p className="text-gray-600 leading-relaxed mb-4">
-            We use cookies and similar technologies to analyze website traffic and improve your experience.
-            You can control cookie preferences through your browser settings.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-bold text-gray-900 mt-8 mb-3">5. Data Security</h2>
-          <p className="text-gray-600 leading-relaxed mb-4">
-            We use industry-standard security measures to protect your data, including encrypted connections
-            (HTTPS), secure database hosting, and access controls.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-bold text-gray-900 mt-8 mb-3">6. Your Rights</h2>
-          <p className="text-gray-600 leading-relaxed mb-4">
-            You have the right to:
+            We do not sell your personal information to third parties. However, we may share
+            information with trusted service providers that help us operate our platform. These
+            include:
           </p>
           <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-            <li>Request access to your personal data</li>
-            <li>Request deletion of your data</li>
-            <li>Unsubscribe from marketing emails at any time</li>
-            <li>Opt out of analytics tracking</li>
+            <li>Supabase &mdash; database hosting and authentication</li>
+            <li>Resend &mdash; transactional and marketing email delivery</li>
+            <li>PostHog &mdash; product usage insights</li>
+            <li>Google &mdash; website traffic measurement</li>
+            <li>Vercel &mdash; website hosting and deployment</li>
           </ul>
+          <p className="text-gray-600 leading-relaxed mb-4">
+            Each third-party provider is contractually obligated to protect your information and
+            may only use it to provide services on our behalf.
+          </p>
         </section>
 
-        <section>
-          <h2 className="text-xl font-bold text-gray-900 mt-8 mb-3">7. Contact Us</h2>
+        <section className="mb-8">
+          <h2 className="text-xl font-bold text-gray-900 mb-3">5. Cookies and Tracking Technologies</h2>
           <p className="text-gray-600 leading-relaxed mb-4">
-            If you have questions about this privacy policy or your data, contact us at{" "}
+            We use cookies and similar tracking technologies to monitor activity on our website
+            and store certain information. Cookies are small files placed on your device. You can
+            instruct your browser to refuse all cookies or to indicate when a cookie is being sent.
+            However, if you do not accept cookies, you may not be able to use some portions of our
+            site. We use both session cookies (which expire when you close your browser) and
+            persistent cookies (which remain until you delete them or they expire).
+          </p>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-xl font-bold text-gray-900 mb-3">6. Data Security</h2>
+          <p className="text-gray-600 leading-relaxed mb-4">
+            We implement appropriate technical and organizational security measures to protect
+            your personal information. This includes encrypted connections via HTTPS, secure
+            database hosting with row-level security, access controls, and regular security
+            reviews. However, no method of transmission over the internet is 100% secure, and
+            we cannot guarantee absolute security.
+          </p>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-xl font-bold text-gray-900 mb-3">7. Your Rights</h2>
+          <p className="text-gray-600 leading-relaxed mb-4">
+            Depending on your location, you may have certain rights regarding your personal
+            information, including:
+          </p>
+          <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+            <li>The right to access the personal information we hold about you</li>
+            <li>The right to request correction of inaccurate information</li>
+            <li>The right to request deletion of your personal information</li>
+            <li>The right to unsubscribe from marketing emails at any time</li>
+            <li>The right to opt out of tracking and behavioral profiling</li>
+          </ul>
+          <p className="text-gray-600 leading-relaxed mb-4">
+            To exercise any of these rights, please contact us using the information below.
+          </p>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-xl font-bold text-gray-900 mb-3">8. Changes to This Policy</h2>
+          <p className="text-gray-600 leading-relaxed mb-4">
+            We may update this Privacy Policy from time to time. We will notify you of any
+            changes by posting the new policy on this page and updating the effective date above.
+            You are advised to review this page periodically for any changes.
+          </p>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-xl font-bold text-gray-900 mb-3">9. Contact Us</h2>
+          <p className="text-gray-600 leading-relaxed mb-4">
+            If you have questions or concerns about this Privacy Policy or how we handle your
+            information, please contact us at{" "}
             <a href="mailto:hello@joinguild.app" className="text-guild-blue hover:underline">
               hello@joinguild.app
             </a>.

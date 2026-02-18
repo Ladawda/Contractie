@@ -19,9 +19,9 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://joinguild.app"),
-  title: "Guild | Find Verified Contractors — No Lead Fees, No Commissions",
+  title: "Guild | Find Verified Contractors Near You",
   description:
-    "Guild connects you directly with verified, licensed contractors. No lead fees, no commissions, no middleman. Post a job and get matched with qualified pros near you.",
+    "Guild connects you with verified, licensed contractors. No lead fees, no commissions. Post a job and get matched with pros near you.",
   alternates: {
     canonical: "/",
   },

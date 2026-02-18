@@ -91,11 +91,11 @@ export function FinalCta() {
               />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="cta-role" className="sr-only">I am a...</label>
+                  <label htmlFor="cta-role" className="sr-only">I am a</label>
                   <select
                     id="cta-role"
                     name="role"
-                    aria-label="Select your role"
+                    aria-label="I am a"
                     required
                     defaultValue=""
                     className="w-full px-5 py-4 bg-white border border-silver rounded-xl text-gray-900 text-[0.9375rem] outline-none transition-all duration-300 focus:border-guild-blue focus:ring-3 focus:ring-guild-blue/15 shadow-[0_1px_3px_rgba(0,0,0,0.04)] appearance-none bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2710%27%20height%3D%276%27%20viewBox%3D%270%200%2010%206%27%20fill%3D%27none%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%3E%3Cpath%20d%3D%27M1%201L5%205L9%201%27%20stroke%3D%27rgba(0%2C0%2C0%2C0.3)%27%20stroke-width%3D%271.5%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_1rem_center] pr-10"
