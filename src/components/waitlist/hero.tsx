@@ -242,7 +242,9 @@ export function Hero() {
                     onSubmit={handleStep1}
                     className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4"
                   >
+                    <label htmlFor="hero-email" className="sr-only">Email address</label>
                     <input
+                      id="hero-email"
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
@@ -293,8 +295,10 @@ export function Hero() {
                     className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4"
                   >
                     <div className="relative w-full sm:w-auto">
+                      <label htmlFor="hero-zip" className="sr-only">ZIP code</label>
                       <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                       <input
+                        id="hero-zip"
                         ref={zipRef}
                         type="text"
                         value={zipCode}

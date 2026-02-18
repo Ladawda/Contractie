@@ -83,9 +83,9 @@ export function SolutionSection() {
                 <div className="inline-flex px-3 py-1 bg-guild-blue-soft rounded-lg text-[0.6875rem] font-bold tracking-[0.1em] uppercase text-guild-blue mb-4">
                   Quest Giver
                 </div>
-                <h4 className="font-display text-xl font-bold text-gray-900 mb-3">
+                <h3 className="font-display text-xl font-bold text-gray-900 mb-3">
                   Post a Quest. Find Your Party.
-                </h4>
+                </h3>
                 <ul className="flex flex-col gap-2">
                   {questGiverPerks.map((perk) => (
                     <li key={perk} className="text-sm text-gray-500 pl-5 relative before:content-['+'] before:absolute before:left-0 before:font-bold before:text-gray-300">
@@ -101,9 +101,9 @@ export function SolutionSection() {
                 <div className="inline-flex px-3 py-1 bg-guild-teal-soft rounded-lg text-[0.6875rem] font-bold tracking-[0.1em] uppercase text-guild-teal mb-4">
                   Adventurer
                 </div>
-                <h4 className="font-display text-xl font-bold text-gray-900 mb-3">
+                <h3 className="font-display text-xl font-bold text-gray-900 mb-3">
                   Your Skills. Your Rates. Your Guild.
-                </h4>
+                </h3>
                 <ul className="flex flex-col gap-2">
                   {adventurerPerks.map((perk) => (
                     <li key={perk} className="text-sm text-gray-500 pl-5 relative before:content-['+'] before:absolute before:left-0 before:font-bold before:text-gray-300">

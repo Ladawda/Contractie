@@ -47,16 +47,18 @@ export function ProblemSection() {
           {/* Problem list */}
           <ul className="flex flex-col gap-3">
             {problems.map((problem, i) => (
-              <ScrollReveal key={i} delay={i * 0.08}>
-                <li className="flex items-start gap-4 p-4 bg-white border border-red-100 rounded-xl transition-all duration-300 hover:shadow-elevated hover:border-red-200 hover:translate-x-1">
-                  <span className="shrink-0 w-7 h-7 rounded-full bg-red-50 flex items-center justify-center text-destructive">
-                    <X className="w-3.5 h-3.5" />
-                  </span>
-                  <span className="text-[0.9375rem] text-gray-600 leading-relaxed">
-                    <strong className="text-gray-900 font-semibold">{problem.text}</strong> {problem.detail}
-                  </span>
-                </li>
-              </ScrollReveal>
+              <li key={i}>
+                <ScrollReveal delay={i * 0.08}>
+                  <div className="flex items-start gap-4 p-4 bg-white border border-red-100 rounded-xl transition-all duration-300 hover:shadow-elevated hover:border-red-200 hover:translate-x-1">
+                    <span className="shrink-0 w-7 h-7 rounded-full bg-red-50 flex items-center justify-center text-destructive">
+                      <X className="w-3.5 h-3.5" />
+                    </span>
+                    <span className="text-[0.9375rem] text-gray-600 leading-relaxed">
+                      <strong className="text-gray-900 font-semibold">{problem.text}</strong> {problem.detail}
+                    </span>
+                  </div>
+                </ScrollReveal>
+              </li>
             ))}
           </ul>
 

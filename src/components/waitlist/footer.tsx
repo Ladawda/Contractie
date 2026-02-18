@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { GuildLogo } from "@/components/guild-logo";
 
 export function Footer() {
@@ -9,23 +10,33 @@ export function Footer() {
           <GuildLogo height={24} className="opacity-40" />
 
           {/* Links */}
-          <ul className="flex flex-wrap justify-center gap-x-8 gap-y-3">
-            {[
-              { label: "Why Guild", href: "#problem" },
-              { label: "How It Works", href: "#how" },
-              { label: "FAQ", href: "#faq" },
-              { label: "Contact", href: "mailto:hello@joinguild.app" },
-            ].map((link) => (
-              <li key={link.label}>
-                <a
-                  href={link.href}
+          <nav aria-label="Footer navigation">
+            <ul className="flex flex-wrap justify-center gap-x-8 gap-y-3">
+              {[
+                { label: "Why Guild", href: "#problem" },
+                { label: "How It Works", href: "#how" },
+                { label: "FAQ", href: "#faq" },
+                { label: "Contact", href: "mailto:hello@joinguild.app" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="text-[0.8125rem] text-gray-400 transition-colors duration-300 hover:text-gray-700"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+              <li>
+                <Link
+                  href="/privacy"
                   className="text-[0.8125rem] text-gray-400 transition-colors duration-300 hover:text-gray-700"
                 >
-                  {link.label}
-                </a>
+                  Privacy Policy
+                </Link>
               </li>
-            ))}
-          </ul>
+            </ul>
+          </nav>
 
           {/* Copyright */}
           <span className="text-xs text-gray-300">

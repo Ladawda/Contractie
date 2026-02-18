@@ -8,10 +8,13 @@ type GuildLogoProps = {
 };
 
 export function GuildLogo({ height = 32, className }: GuildLogoProps) {
+  // Approximate aspect ratio of the Guild logo SVG (~3.5:1)
+  const width = Math.round(height * 3.5);
   return (
     <img
       src={LOGO_URL}
       alt="Guild"
+      width={width}
       height={height}
       style={{ height, width: "auto" }}
       className={className}
